@@ -29,7 +29,7 @@ async function queryExecute(dbQuery, localDebug) {
 } // queryExecute ends
 
 let result = queryExecute(dbQuery, localDebug);
-console.log("result:", result);
+result.then((a) => console.log("result:", a));
 
 let map = L.map("map").setView([55, -98], 5);
 

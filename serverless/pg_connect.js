@@ -1,4 +1,6 @@
-const { Pool } = require("pg");
+//https://gis.stackexchange.com/questions/35171/creating-proper-geojson-from-postgis-data-using-node-js
+
+//const { Pool } = require("pg");
 
 async function execute(dbQuery, localDebug) {
   //   const pgPool = new Pool({
@@ -28,10 +30,12 @@ exports.handler = async function (event, context, callback) {
   //      sqlQueries object (in this file). With this key, we can get the actual SQL query.
 
   var httpMessage = JSON.parse(event.body).httpMessage;
+  console.log("httpMessage:", httpMessage);
   let dbQuery = httpMessage.dbQuery;
   let localDebug = httpMessage.localDebug;
 
-  var response = await execute(dbQuery, localDebug);
+  //var response = await execute(dbQuery, localDebug);
+  var response = { message: "Hola" };
 
   callback(null, {
     statusCode: 200,
