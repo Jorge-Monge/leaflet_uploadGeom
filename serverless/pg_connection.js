@@ -28,7 +28,7 @@ async function execute(dbQuery, localDebug) {
         ST_AsGeoJSON(ST_TRANSFORM(geom, 4326)) AS geom
       FROM statscan_dissemination_areas
       WHERE prov_abbrev = 'AB'
-      LIMIT 10000
+      LIMIT 1000
       `;
   }
 
