@@ -6,7 +6,11 @@ async function execute(dbQuery, localDebug) {
   // In local debugging, obtain the env. variables from a local file
   let local;
   if (localDebug === true) {
-    local = require("../envs.js");
+    try {
+      local = require("../envs.js");
+    } catch {
+      console.log("catching");
+    }
   }
 
   const pgPool = new Pool({
