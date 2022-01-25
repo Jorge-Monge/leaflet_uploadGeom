@@ -115,7 +115,7 @@ let jsonLayer = L.geoJSON((data = null), {
   },
 })
   .bindPopup(function (layer) {
-    return "Hola";
+    return "I am a popup";
   })
   .addTo(map);
 
