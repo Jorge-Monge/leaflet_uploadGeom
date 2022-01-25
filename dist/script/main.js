@@ -14,7 +14,7 @@ async function queryExecute(dbQuery, localDebug) {
   // and a Boolean corresponding to whether the app. is executing locally
 
   return (
-    await fetch("/.netlify/functions/pg_connect", {
+    await fetch("/.netlify/functions/pg_connection", {
       method: "POST",
       headers: { Accept: "application/json" },
       body: JSON.stringify({
